@@ -8,11 +8,12 @@ return {
   },
   {
     "hrsh7th/nvim-cmp",
+    dependencies = { "mlaursen/vim-react-snippets" },
     config = function()
       local cmp = require("cmp")
       -- will exclude all javascript snippets
       require("luasnip.loaders.from_vscode").lazy_load()
-
+      require("vim-react-snippets").lazy_load()
       cmp.setup({
         snippet = {
           -- REQUIRED - you must specify a snippet engine
